@@ -1,0 +1,121 @@
+# Define Profiles
+spring:
+  profiles: prod
+  redis:
+    host: 192.168.1.142
+    #host: localhost
+    port: 6379
+
+# Database Connection
+main:
+  datasource:
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    jdbc-url: jdbc:sqlserver://172.19.93.11:1433;databaseName=COP_ORIGINAL;useUnicode=true;characterEncoding=UTF-8
+    username: sa
+    password: FinnBet2020
+
+# Database Connection BankBot
+bankbot:
+  datasource:
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    jdbc-url: jdbc:sqlserver://172.19.68.10:1433;databaseName=BBTx;useUnicode=true;characterEncoding=UTF-8
+    username: BBRO
+    password: FinnBot2020
+
+# Batch config enable/disable
+batch:
+  transaction: disable
+  rebate: disable
+  cashback: disable
+  bankbot: disable
+
+# JWT
+jwt:
+  secret: coffee-secret-key-jwt-api-app
+  time-expire:
+    # 24 hour (24 * 60 * 60)
+    player: 86400
+    # 30 min (30 * 60 )
+    backoffice: 1800
+    # 30 min (30 * 60 )
+    refresh: 1800
+
+customer-file:
+  images:
+    path: C:\\Coffee-Image\\
+
+path:
+  lottoProvider:
+    api: https://finnbet.com/coffee-beans
+    name: LOTTO
+    gameCode: LOTTO
+  jokerProvider:
+    api: http://api688.net
+    apiGame: http://www.gwc688.net
+    name: JOKER
+    appid: F57Z
+    homePath: https://finnbet.com
+    secretKey: aghejpiuogdyq
+  mxProvider:
+    api: https://fetch.onlinegames22.com
+    name: MX
+    cert: nSFfpzwV63vnpupWQWC
+    agentId: finbet
+    betLimit: 280917,280919
+    gameType: LIVE
+    platform: SEXYBCRT
+  kmProvider:
+    name: KM
+    gameType: TABLE
+    platform: KINGMAKER
+  jiliProvider:
+    name: JILI
+    gameType: SLOT
+    platform: JILI
+  pgProvider:
+    name: PG
+    gameType: SLOT
+    platform: PG
+  rtProvider:
+    name: RT
+    gameType: SLOT
+    platform: RT
+  sboBetProvider:
+    api: https://ex-api-yy.xxttgg.com
+    name: SBO
+    companyKey: F96C66FC19914D5E957775EAECFF015A
+    portfolio: SportsBook
+  saGamingProvider:
+    api: http://api.sa-apisvr.com/api/api.aspx
+    apiTransaction: http://api.sa-rpt.com/api/api.aspx
+    apiClient: https://web.sa-globalxns.com/app.aspx
+    lobbyCode: A3566
+    secretKey: F3F1A3E776B64CF38BC7BEF1641B60D1
+    saEncryptKey: M06!1OgI
+    encryptKey: g9G16nTs
+    md5Key: GgaIMaiNNtg
+    homePath: https://finnbet.com
+  img:
+    api: https://finnbet.com/COFFEE-FILE
+    defaultPath: coffee-hot
+
+websocket:
+  server: https://finnbet.com
+  coffee-server: https://americanodrift.com
+  local: http://172.19.93.12:8080
+
+quartz:
+  enabled: true
+
+cronExpressions:
+  minute:
+    transaction: 0 * * ? * *
+    bankbot: 0 * * ? * *
+  daily:
+    rebateDaily: 0 1 0 * * ? *
+    dailyMidNight: 0 0 0 * * ? *
+    dailyNineAm: 0 0 9 * * ? *
+  weekly:
+    start-week: 0 0 12 ? * MON
+  month:
+    start-month: 0 0 0 1 * ? *
