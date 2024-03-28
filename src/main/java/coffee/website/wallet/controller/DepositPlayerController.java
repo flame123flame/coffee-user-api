@@ -35,6 +35,7 @@ public class DepositPlayerController {
             response.setStatus(ResponseConstant.RESPONSE_STATUS.SUCCESS);
             log.info("Success Calling API DepositListController => saveDeposit");
         } catch (Exception e) {
+            e.printStackTrace();
             response.setMessage(ResponseConstant.RESPONSE_MESSAGE.SAVE.FAILED);
             response.setStatus(ResponseConstant.RESPONSE_STATUS.FAILED);
             log.error("Error Calling API DepositListController => saveDeposit :" + e);

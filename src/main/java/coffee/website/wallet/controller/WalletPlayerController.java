@@ -54,6 +54,7 @@ public class WalletPlayerController {
             response.setStatus(ResponseConstant.RESPONSE_STATUS.SUCCESS);
             log.info("Success Calling API WalletController => getBalance");
         } catch (Exception e) {
+            e.printStackTrace();
             response.setMessage(ResponseConstant.RESPONSE_MESSAGE.GET.FAILED);
             response.setStatus(ResponseConstant.RESPONSE_STATUS.FAILED);
             log.error("Error Calling API WalletController => getBalance :" + e);

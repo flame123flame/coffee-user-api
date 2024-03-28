@@ -38,8 +38,9 @@ public class DepositSettingService {
 	public DepositSetting getDepositSetting() {
 		List<DepositSetting> res = depositSettingJpa.findAll();
 		DepositSetting daraRes = new DepositSetting();
-		if (res != null)
+		if (res != null) {
 			daraRes = res.get(0);
+		}
 		return daraRes;
 	}
 }

@@ -10,7 +10,7 @@ spring:
 main:
   datasource:
     driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    jdbc-url: jdbc:sqlserver://172.19.93.11:1433;databaseName=COP_ORIGINAL;useUnicode=true;characterEncoding=UTF-8
+    jdbc-url: jdbc:sqlserver://172.19.93.11:1433;databaseName=BANTHOUNT_ORIGINAL;useUnicode=true;characterEncoding=UTF-8
     username: sa
     password: FinnBet2020
 

@@ -33,11 +33,11 @@ public class RebateDailyBatchJob implements Job {
 		if (config.equals("enable")) {
 			try {
 				//SET UPDATE BET DAILY ZERO BY PROVIDER
-				providerSummaryService.updateBetDailyZero();
+//				providerSummaryService.updateBetDailyZero();
 				//AN ACTIVE PROMOTION WILL NOT WORK.
 				System.out.println("Run Batech Job Rebate & cashback Calculate Daily!");
-				calculateRebateService.findRebateDaily(false);
-				calculateCashbackService.findCashbackDaily(false);
+//				calculateRebateService.findRebateDaily(false);
+//				calculateCashbackService.findCashbackDaily(false);
 			} catch (Exception e) {
 				log.error("RebateDailyBatchJob", e);
 			}

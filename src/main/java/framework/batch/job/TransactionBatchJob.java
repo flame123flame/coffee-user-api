@@ -42,15 +42,15 @@ public class TransactionBatchJob implements Job {
 		if(config.equals("enable")) {
 			try {
 				System.out.println("Batch updateTransactionProvider job!");
-				jokerTransactionsService.updatedTransaction();
-				mxTransactionService.updatedTransaction();
-				mxTransactionService.updatedTransactionJili();
-				mxTransactionService.updatedTransactionKm();
-				mxTransactionService.updatedTransactionPg();
-				mxTransactionService.updatedTransactionRt();
-				sboBetTransactionService.updatedTransaction();
-				saGamingTransactionService.updatedTransaction();
-				lottoProviderService.getLottoTransactionByUpdateDate();
+//				jokerTransactionsService.updatedTransaction();
+//				mxTransactionService.updatedTransaction();
+//				mxTransactionService.updatedTransactionJili();
+//				mxTransactionService.updatedTransactionKm();
+//				mxTransactionService.updatedTransactionPg();
+//				mxTransactionService.updatedTransactionRt();
+//				sboBetTransactionService.updatedTransaction();
+//				saGamingTransactionService.updatedTransaction();
+//				lottoProviderService.getLottoTransactionByUpdateDate();
 			}catch (Exception e) {
 				log.error("TransactionBatchJob" , e);
 			}

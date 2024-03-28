@@ -18,18 +18,18 @@ public class BankBotBatchJob implements Job {
 	@Autowired
 	private BankBotService bankBotService;
 
-	@Value("${batch.bankbot}")
+//	@Value("${batch.bankbot}")
 	private String config;
 
 	public void execute(JobExecutionContext context) throws JobExecutionException {
-		if (config.equals("enable")) {
-			try {
-				log.info("Start BankBotBatchJob");
-				bankBotService.logBankBot();
-				bankBotService.updateDepositBankBot();
-			} catch (Exception e) {
-				log.error("BankBotBatchJob", e);
-			}
-		}
+//		if (config.equals("enable")) {
+//			try {
+//				log.info("Start BankBotBatchJob");
+//				bankBotService.logBankBot();
+//				bankBotService.updateDepositBankBot();
+//			} catch (Exception e) {
+//				log.error("BankBotBatchJob", e);
+//			}
+//		}
 	}
 }

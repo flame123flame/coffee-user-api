@@ -32,8 +32,8 @@ public class AutoCashbackRebateBatchJob implements Job {
     public void execute(JobExecutionContext context) throws JobExecutionException {
         if (config.equals("enable")) {
             try {
-                calculateCashbackService.doCashback(false);
-                calculateRebateService.doRebateWaiting();
+//                calculateCashbackService.doCashback(false);
+//                calculateRebateService.doRebateWaiting();
             } catch (Exception e) {
                 log.error("RebateDailyBatchJob", e);
             }

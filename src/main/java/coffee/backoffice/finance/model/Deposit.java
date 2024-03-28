@@ -33,7 +33,7 @@ public class Deposit implements Serializable {
 	
 	@Column(name = "username")
 	private String username;
-	
+
 	@Column(name = "company_account_code")
 	private String companyAccountCode;
 	
@@ -45,21 +45,21 @@ public class Deposit implements Serializable {
 	
 	@Column(name = "amount")
 	private BigDecimal amount = BigDecimal.ZERO;
-	
-	@Column(name = "deposit_date")
-	private Date depositDate;
-	
+
 	@Column(name = "status")
 	private String status;
 
 	@Column(name = "auditor")
 	private String auditor;
-	
+
 	@Column(name = "auditor_date")
 	private Date auditorDate;
-	
+
 	@Column(name = "deposit_remark")
 	private String depositRemark;
+
+	@Column(name = "deposit_date")
+	private Date depositDate;
 	
 	@Column(name = "created_by")
 	private String createdBy;

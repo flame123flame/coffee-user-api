@@ -39,7 +39,7 @@ public class WalletPlayerService {
     public BigDecimal findBalanceWithBonus(String username) {
         String uuid = GenerateRandomString.generateUUID();
         Customer customer = customerService.getByUsername(username);
-        playgameService.withdrawCreditFromProvider(customer, uuid);
+//        playgameService.withdrawCreditFromProvider(customer, uuid);
         log.info("=== WalletService => findBalance() on Started ===");
         Wallet result = walletRepository.findByUsernameAndWalletName(username, ProjectConstant.WALLET.MAIN_WALLET);
 
@@ -58,7 +58,7 @@ public class WalletPlayerService {
     public BigDecimal findBalanceWithoutBonus(String username) {
         String uuid = GenerateRandomString.generateUUID();
         Customer customer = customerService.getByUsername(username);
-        playgameService.withdrawCreditFromProvider(customer, uuid);
+//        playgameService.withdrawCreditFromProvider(customer, uuid);
         log.info("=== WalletService => findBalance() on Started ===");
         Wallet result = walletRepository.findByUsernameAndWalletName(username, ProjectConstant.WALLET.MAIN_WALLET);
 

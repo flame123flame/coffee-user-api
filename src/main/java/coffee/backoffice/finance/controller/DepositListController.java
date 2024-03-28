@@ -94,6 +94,7 @@ public class DepositListController {
 			response.setStatus(RESPONSE_STATUS.SUCCESS);
 			log.info("Success Calling API DepositListController => changeStatus");
 		} catch (Exception e) {
+			e.printStackTrace();
 			response.setMessage(RESPONSE_MESSAGE.EDIT.FAILED);
 			response.setStatus(RESPONSE_STATUS.FAILED);
 			log.error("Error Calling API DepositListController => changeStatus :" + e);

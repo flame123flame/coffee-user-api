@@ -4,12 +4,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.Data;
 
@@ -37,14 +32,29 @@ public class GroupLevel implements Serializable {
 	@Column(name = "count_player")
 	private int countPlayer;
 
-	@Column(name = "status")
-	private String status;
-
 	@Column(name = "description")
 	private String description;
 
 	@Column(name = "default_group")
 	private Boolean defaultGroup;
+
+	@Column(name = "status")
+	private String status;
+
+	@Column(name = "show_in_front_end")
+	private Boolean showInFrontEnd;
+
+	@Column(name = "total_deposit_amt_up")
+	private BigDecimal totalDepositAmtUp;
+
+	@Column(name = "valid_bets_up")
+	private BigDecimal validBetsUp;
+
+	@Column(name = "total_deposit_amt_rm")
+	private BigDecimal totalDepositAmtRm;
+
+	@Column(name = "valid_bets_rm")
+	private BigDecimal validBetsRm;
 
 	@Column(name = "min_deposit_amt")
 	private BigDecimal minDepositAmt;
@@ -70,9 +80,13 @@ public class GroupLevel implements Serializable {
 	@Column(name = "update_by")
 	private String updateBy;
 
+	@Column(name = "group_mobile_phone")
 	private String groupMobilePhone;
+
+	@Column(name = "group_link_line")
 	private String groupLinkLine;
 
+	@Lob
 	@Column(name = "group_icon_img")
 	private String groupIconImg;
 
@@ -81,5 +95,5 @@ public class GroupLevel implements Serializable {
 
 	@Column(name = "level")
 	private String level;
-	
+
 }

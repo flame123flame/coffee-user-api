@@ -226,19 +226,25 @@ public class RebateService {
 	}
 
 	public BigDecimal getCommissionPercentByGroupCodeAndProviderCode(String groupCode, String providerCode) {
-		List<Rebate> rebates = rebateJpa.findALLByVipGroupCodeContaining(groupCode);
-		BigDecimal maxCommissionRate = BigDecimal.valueOf(0);
-		for (Rebate item : rebates) {
-			List<RebateCondition> rebateConditions = rebateConditionJpa
-					.findAllByRebateCodeAndGameProviderCode(item.getCode(), providerCode);
-			if (!rebateConditions.isEmpty()) {
-				for (RebateCondition it : rebateConditions) {
-					if (maxCommissionRate.compareTo(it.getRebatePercent()) == -1) {
-						maxCommissionRate = it.getRebatePercent();
+		try {
+			List<Rebate> rebates = rebateJpa.findALLByVipGroupCodeContaining(groupCode);
+			BigDecimal maxCommissionRate = BigDecimal.valueOf(0);
+			for (Rebate item : rebates) {
+				List<RebateCondition> rebateConditions = rebateConditionJpa
+						.findAllByRebateCodeAndGameProviderCode(item.getCode(), providerCode);
+				if (!rebateConditions.isEmpty()) {
+					for (RebateCondition it : rebateConditions) {
+						if (maxCommissionRate.compareTo(it.getRebatePercent()) == -1) {
+							maxCommissionRate = it.getRebatePercent();
+						}
 					}
 				}
 			}
+			return maxCommissionRate;
+		}catch (Exception e){
+			e.printStackTrace();
 		}
-		return maxCommissionRate;
+
+		return BigDecimal.ZERO;
 	}
 }
