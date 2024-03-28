@@ -10,7 +10,7 @@ spring:
 main:
   datasource:
     driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    jdbc-url: jdbc:sqlserver://baiwa.ddns.net:7002;databaseName=BANTHOUNT_ORIGINAL;useUnicode=true;characterEncoding=UTF-8
+    jdbc-url: jdbc:sqlserver://baiwa.ddns.net:7002;databaseName=COP_ORIGINAL;useUnicode=true;characterEncoding=UTF-8
     username: developer
     password: Baiwa123
 
