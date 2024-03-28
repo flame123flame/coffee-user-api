@@ -46,7 +46,7 @@ customer-file:
 
 path:
   lottoProvider:
-    api: http://192.168.1.197:8082/coffee-beans
+    api: http://localhost:8082/coffee-beans
     name: LOTTO
     gameCode: LOTTO
   jokerProvider:
@@ -54,7 +54,7 @@ path:
     apiGame: http://www.gwc688.net
     name: JOKER
     appid: TFT2
-    homePath: https://192.168.1.197:8082
+    homePath: https://localhost:8082
     secretKey: s5gawk7t5tf8r
   mxProvider:
     api: https://tttint.onlinegames22.com
@@ -94,13 +94,13 @@ path:
     saEncryptKey: M06!1OgI
     encryptKey: g9G16nTs
     md5Key: GgaIMaiNNtg
-    homePath: https://192.168.1.197:8082
+    homePath: https://localhost:8082
   img:
-    api: https://192.168.1.197:8082/COFFEE-FILE
+    api: https://localhost:8084/COFFEE-FILE
     defaultPath: coffee-hot
 
 websocket:
-  server: https://192.168.1.197:8082
+  server: https://localhost:8082
   coffee-server: https://americanodrift.com
   local: http://172.19.93.12:8080
 
